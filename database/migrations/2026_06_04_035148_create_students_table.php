@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('province');
             $table->timestamps();
 
-            $table->foreign('generation_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('generation_id')->constrained()->onDelete('cascade');
         });
     }
 
