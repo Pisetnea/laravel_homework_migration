@@ -20,8 +20,8 @@ class CategoryController extends Controller
         // $categories = DB::table("categories")->get();
         // return view("categories.list", compact('categories'));
 
-        // Eloquent ORM
-        $categories = Category::all();
+        // Eloquent ORM with related products
+        $categories = Category::with('products')->get();
         return view("categories.list", compact('categories'));
     }
 

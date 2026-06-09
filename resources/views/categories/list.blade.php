@@ -11,6 +11,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Products</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -20,6 +21,17 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->desc }}</td>
+                    <td>
+                        @if($category->products->isNotEmpty())
+                            <ul class="mb-0 ps-3">
+                                @foreach($category->products as $product)
+                                    <li>{{ $product->name }}</li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <span class="text-muted">No products</span>
+                        @endif
+                    </td>
                     <td>
                         <!-- Button trigger modal -->
                         <a href="" data-bs-toggle="modal" class="text-success"
