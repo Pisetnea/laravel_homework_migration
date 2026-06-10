@@ -32,10 +32,14 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        Category::create([
-            "name" => $request->name,
-            "desc" => $request->desc
+        
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255', 'unique:categories,name'],
+            'desc' => ['required', 'string', 'max:255'],
+            'is_active' => ['nullable', 'in:Active,Inactive'],
         ]);
+
+        Category::create($validated);
 
         return redirect("categories");
     }
