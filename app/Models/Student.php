@@ -8,14 +8,9 @@ class Student extends Model
 {
     protected $fillable = [
         'student_id',
-        'profile',
-        'last_name',
-        'first_name',
-        'gender',
+        'name',
         'email',
-        'password',
-        'province',
-        'generation_id',
+        'phone',
     ];
 
     public function generation()

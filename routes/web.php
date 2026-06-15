@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,17 @@ Route::delete('/products/{id}', [App\Http\Controllers\ProductController::class, 
     ->name('products.destroy');
 
 Route::get('/movies', [App\Http\Controllers\MovieController::class, 'index'])->name('movies.index');
+
+//student
+Route::get('/students', [App\Http\Controllers\StudentController::class, 'index'])
+    ->name('students.index');
+Route::get('/students/create', [App\Http\Controllers\StudentController::class, 'create'])
+    ->name('students.create');
+Route::post('/students', [App\Http\Controllers\StudentController::class, 'store'])
+    ->name('students.store');
+Route::get('/students/{id}/edit', [App\Http\Controllers\StudentController::class, 'edit'])
+    ->name('students.edit');
+Route::put('/students/{id}', [App\Http\Controllers\StudentController::class, 'update'])
+    ->name('students.update');
+Route::delete('/students/{id}', [App\Http\Controllers\StudentController::class, 'destroy'])
+    ->name('students.destroy');

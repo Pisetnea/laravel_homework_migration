@@ -10,6 +10,7 @@
         <li><a href="{{ route('users.index') }}">Users</a></li>
         <li><a href="{{ route('customers.index') }}">Customers</a></li>
         <li><a href="{{ route('categories.index') }}">Categories</a></li>
+        <li><a href="{{ route('students.index') }}">Students</a></li>
     </ul>
 </body>
 </html>

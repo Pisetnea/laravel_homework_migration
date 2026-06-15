@@ -8,8 +8,18 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/categories',[CategoryController::class,'index']);
-Route::post('/categories',[CategoryController::class,'store']);
-Route::get('/categories/{id}',[CategoryController::class,'show']);
-Route::put('/categories/{id}',[CategoryController::class,'update']);
-Route::delete('/categories/{id}',[CategoryController::class,'destroy']);
+// Route::get('/categories',[CategoryController::class,'index']);
+// Route::post('/categories',[CategoryController::class,'store']);
+// Route::get('/categories/{id}',[CategoryController::class,'show']);
+// Route::put('/categories/{id}',[CategoryController::class,'update']);
+// Route::delete('/categories/{id}',[CategoryController::class,'destroy']);
+
+
+Route::apiResource('categories',CategoryController::class)
+->names([
+    'index'=>'api.categories.index',
+    'store'=>'api.categories.store',
+    'show'=>'api.categories.show',
+    'update'=>'api.categories.update',
+    'destroy'=>'api.categories.destroy',
+]);
