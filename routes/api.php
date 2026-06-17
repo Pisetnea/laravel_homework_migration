@@ -23,3 +23,12 @@ Route::apiResource('categories',CategoryController::class)
     'update'=>'api.categories.update',
     'destroy'=>'api.categories.destroy',
 ]);
+
+Route::apiResource('products',\App\Http\Controllers\Api\ProductController::class)
+->names([
+    'index'=>'api.products.index',
+    'store'=>'api.products.store',
+    'show'=>'api.products.show',
+    'update'=>'api.products.update',
+    'destroy'=>'api.products.destroy',
+]);
